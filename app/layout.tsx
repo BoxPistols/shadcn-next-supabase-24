@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils"; 
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-  display: 'swap', // フォントの読み込み方法を指定
+const inter = Inter({
+  preload: true,
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-  display: 'swap',
+const notoSansJP = Noto_Sans_JP({
+  preload: true,
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-noto-sans-jp",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +30,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        className={cn(
+          "antialiased min-h-screen",
+          inter.variable,
+          notoSansJP.variable,
+          "font-sans"
+        )}
         suppressHydrationWarning
       >
         {children}

@@ -6,10 +6,10 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-4xl font-bold text-center">Welcome to Next.js!</h1>
         <p className="text-center">
-          Get started by editing <code>pages/index.tsx</code>
+          はじめまして、勉強中のエンジニアです。
         </p>
         <Button>
-          Click me
+          <a href="https://nextjs.org/docs">Learn More</a>
         </Button>
       </main>
     </div>
