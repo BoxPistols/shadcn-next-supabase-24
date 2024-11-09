@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -6,6 +8,9 @@ export default function Home() {
         <p className="text-center">
           Get started by editing <code>pages/index.tsx</code>
         </p>
+        <Button>
+          Click me
+        </Button>
       </main>
     </div>
   );
